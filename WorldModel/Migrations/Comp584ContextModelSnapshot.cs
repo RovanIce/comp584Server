@@ -33,11 +33,11 @@ namespace WorldModel.Migrations
                     b.Property<int>("CountryIdentifier")
                         .HasColumnType("int");
 
-                    b.Property<int>("Latitude")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Longitude")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -45,8 +45,8 @@ namespace WorldModel.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<int>("Population")
-                        .HasColumnType("int")
+                    b.Property<decimal>("Population")
+                        .HasColumnType("decimal(18,2)")
                         .HasColumnName("population");
 
                     b.HasKey("Id");

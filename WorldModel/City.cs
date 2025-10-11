@@ -19,12 +19,12 @@ public partial class City
     [Unicode(false)]
     public string Name { get; set; } = null!;
 
-    public int Latitude { get; set; }
+    public decimal Latitude { get; set; }
 
-    public int Longitude { get; set; }
+    public decimal Longitude { get; set; }
 
     [Column("population")]
-    public int Population { get; set; }
+    public decimal Population { get; set; }
 
     [ForeignKey("CountryIdentifier")]
     [InverseProperty("Cities")]
