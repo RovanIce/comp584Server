@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace WorldModel;
 
-public partial class Comp584Context : DbContext
+public partial class Comp584Context : IdentityDbContext<WorldModelUsers>
 {
     public Comp584Context()
     {

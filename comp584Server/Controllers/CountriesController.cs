@@ -48,7 +48,7 @@ namespace comp584Server.Controllers
 
             return country;
         }
-        [HttpGet("Population:{id}")]
+        [HttpGet("Population/{id}")]
         public ActionResult<CountryPopulation> GetCountryPopulation(int id)
         {
             return context.Countries.Select(country => new CountryPopulation
