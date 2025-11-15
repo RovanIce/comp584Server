@@ -99,27 +99,28 @@ namespace comp584Server.Controllers
             {
                 await roleManager.CreateAsync(new IdentityRole(registeredUser));
             }
-            WorldModelUsers adminUser = new()
-            {
-                UserName = "admin",
-                Email = "rovanicebuisness@gmail.com",
-                EmailConfirmed = true,
-                LockoutEnabled = false,
-                SecurityStamp = Guid.NewGuid().ToString(),
-            };
-            await userManager.CreateAsync(adminUser, configuration["DefaultPasswords:admin"]!);
-            await userManager.AddToRoleAsync(adminUser, administrator);
-
-            WorldModelUsers regUser = new()
-            {
-                UserName = "user",
-                Email = "totallylegitemail@gmail.com",
-                EmailConfirmed = true,
-                LockoutEnabled = false,
-                SecurityStamp = Guid.NewGuid().ToString(),
-            };
-            await userManager.CreateAsync(regUser, configuration["DefaultPasswords:user"]!);
-            await userManager.AddToRoleAsync(regUser, registeredUser);
+                WorldModelUsers adminUser = new()
+                {
+                    UserName = "admin",
+                    Email = "rovanicebuisness@gmail.com",
+                    EmailConfirmed = true,
+                    LockoutEnabled = false,
+                    SecurityStamp = Guid.NewGuid().ToString(),
+                };
+                await userManager.CreateAsync(adminUser, configuration["DefaultPasswords:admin"]!);
+                await userManager.AddToRoleAsync(adminUser, administrator);
+            
+                WorldModelUsers regUser = new()
+                {
+                    UserName = "user",
+                    Email = "totallylegitemail@gmail.com",
+                    EmailConfirmed = true,
+                    LockoutEnabled = false,
+                    SecurityStamp = Guid.NewGuid().ToString(),
+                };
+                await userManager.CreateAsync(regUser, configuration["DefaultPasswords:user"]!);
+                await userManager.AddToRoleAsync(regUser, registeredUser);
+            
 
             return Ok();
         }

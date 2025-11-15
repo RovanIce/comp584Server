@@ -1,3 +1,4 @@
+using comp584Server;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -18,6 +19,7 @@ builder.Services.AddIdentity<WorldModelUsers,IdentityRole>(options =>
     options.Password.RequireDigit = true;
 })
     .AddEntityFrameworkStores<Comp584Context>();
+builder.Services.AddScoped<JwtHandling>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
  builder.Services.AddSwaggerGen(c =>
