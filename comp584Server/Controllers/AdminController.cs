@@ -28,7 +28,7 @@ namespace comp584Server.Controllers
             return Ok(new LoginResponse
             {
                 Sucess = true,
-                Message = "Mom kind of likes me",
+                Message = "Login Success",
                 Token = string_token
             });
         }
